@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <time.h>
+#include <stdio.h>
 
+/* Generate Random DNA Sequence Function */
 char* generateRandomDNASequence(int length) {
-    char* genSeq = malloc(length); // Initialize & allocate memory for generated DNA sequence
+    char* genSeq;
+    genSeq = (char*)malloc(length); // Initialize & allocate memory for generated DNA sequence
 
     int nucleotide; // Placeholder variable to determine nucleotide
     for (int index = 0; index < length; index ++) {
@@ -29,19 +29,4 @@ char* generateRandomDNASequence(int length) {
     }
     genSeq[length] = '\0'; 
     return genSeq;
-}
-
-int main() {
-    printf("Random DNA Sequence Generator Program\n");
-
-    srand(time(NULL)); // set random seed
-
-    int seqLength; // Get DNA sequence length
-    printf("Enter the length of the DNA Sequence to generate -> ");
-    scanf("%d", &seqLength);
-
-    char* generated;
-    generated = generateRandomDNASequence(seqLength);
-
-    printf("Generated sequence: 5'-%s-3'\n", generated);
 }
